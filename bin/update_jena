@@ -31,3 +31,13 @@ Dir.glob( 'javalib/*.jar' ).each do |f|
   r << "require '#{$1}'\n"
 end
 r.close
+
+# overwrite ARQ jar with the one from
+puts "Fixing jena-arq timeout ..."
+FIXED_ARQ = "https://github.com/adrapereira/jena/releases/download/jena-arq-2.13.0-fixtimeout/jena-arq-2.13.0-fixtimeout.jar"
+ORIGINAL_ARQ = "javalib/jena-arq-2.13.0.jar"
+open( FIXED_ARQ ) do |url|
+  File.open( ORIGINAL_ARQ,"wb" ) do |file|
+      file.puts url.read
+    end
+end
