@@ -33,7 +33,7 @@ end
 r.close
 
 puts "---Debug---"
-`ls -alR`
+puts Dir.glob("**/*") # for all files
 
 # overwrite ARQ jar with the one from
 puts "Fixing jena-arq timeout ..."
