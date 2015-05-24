@@ -32,9 +32,6 @@ Dir.glob( 'javalib/*.jar' ).each do |f|
 end
 r.close
 
-puts "---Debug---"
-puts Dir.glob("**/*") # for all files
-
 # overwrite ARQ jar with the one from
 puts "Fixing jena-arq timeout ..."
 FIXED_ARQ = "https://github.com/adrapereira/jena/releases/download/jena-arq-2.13.0-fixtimeout/jena-arq-2.13.0-fixtimeout.jar"
