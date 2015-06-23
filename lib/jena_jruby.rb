@@ -158,6 +158,25 @@ module Jena
     java_import com.hp.hpl.jena.tdb.TDBFactory
   end
 
+  module Reasoner
+    java_import com.hp.hpl.jena.reasoner.BaseInfGraph
+    #java_import com.hp.hpl.jena.reasoner.BaseInfGraph.InfCapabilities
+    #java_import com.hp.hpl.jena.reasoner.BaseInfGraph.InfFindSafeCapabilities
+    #java_import com.hp.hpl.jena.reasoner.BaseInfGraph.InfTransactionHandler
+    java_import com.hp.hpl.jena.reasoner.Derivation
+    java_import com.hp.hpl.jena.reasoner.Finder
+    java_import com.hp.hpl.jena.reasoner.InfGraph
+    java_import com.hp.hpl.jena.reasoner.Reasoner
+    java_import com.hp.hpl.jena.reasoner.ReasonerFactory
+    java_import com.hp.hpl.jena.reasoner.ReasonerRegistry
+    java_import com.hp.hpl.jena.reasoner.ValidityReport
+    #java_import com.hp.hpl.jena.reasoner.ValidityReport.Report
+    java_import com.hp.hpl.jena.reasoner.FGraph
+    java_import com.hp.hpl.jena.reasoner.FinderUtil
+    java_import com.hp.hpl.jena.reasoner.StandardValidityReport
+    java_import com.hp.hpl.jena.reasoner.TriplePattern
+  end
+
   module Assembler
     java_import com.hp.hpl.jena.assembler.Assembler
     java_import com.hp.hpl.jena.assembler.Content
