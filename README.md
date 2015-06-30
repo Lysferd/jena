@@ -54,15 +54,15 @@ Since jena now includes TDB modules, those modules no longer need to be built lo
 To build the gem itself:
 
     $ rake build
-    jena-jruby 0.8.0 built to pkg/jena-jruby-0.8.0-java.gem.
+    jena-jruby 0.8.1 built to pkg/jena-jruby-0.8.1-java.gem.
 
 or
 
     $ gem build jena-jruby.gemspec
     Successfully built RubyGem
     Name: jena-jruby
-    Version: 0.8.0
-    File: jena-jruby-0.8.0-java.gem
+    Version: 0.8.1
+    File: jena-jruby-0.8.1-java.gem
 
 To run the tests:
 

@@ -22,6 +22,7 @@ unless File.exist? OUTPUT
   end
 end
 
+raise 'Program `unzip\' is not present in the operation system.' if `unzip`.empty?
 `unzip -jo #{OUTPUT} **/lib/*.jar -x '**/lib/junit*.jar' '**/lib/*tests.jar' -d javalib`
 
 puts "Writing lib/jena_jruby/jars.rb ..."
