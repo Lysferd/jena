@@ -1,7 +1,6 @@
 .loadpath
 .project
 javalib
-downloads/
 pkg
 .buildpath
 rdoc
