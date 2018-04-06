@@ -8,7 +8,7 @@ require 'open-uri'
 
 require 'jena_jruby/version.rb'
 
-LATEST_JENA="http://archive.apache.org/dist/jena/binaries/apache-jena-#{Jena::JENA_VERSION}.zip"
+LATEST_JENA="http://www-us.apache.org/dist/jena/binaries/apache-jena-#{Jena::JENA_VERSION}.zip"
 OUTPUT="downloads/jena-#{Jena::JENA_VERSION}.zip"
 
 FileUtils.mkdir_p "downloads"
@@ -20,10 +20,13 @@ unless File.exist? OUTPUT
       file.puts url.read
     end
   end
+  puts 'Download completed.'
+else
+  puts 'Data file already exists, skipping download.'
 end
 
 raise 'Program `unzip\' is not present in the operation system.' if `unzip`.empty?
-`unzip -jo #{OUTPUT} **/lib/*.jar -x '**/lib/junit*.jar' '**/lib/*tests.jar' -d javalib`
+`unzip -jo #{OUTPUT} **/lib/*.jar -d javalib`
 
 puts "Writing lib/jena_jruby/jars.rb ..."
 r = File.open( 'lib/jena_jruby/jars.rb', 'w' )
