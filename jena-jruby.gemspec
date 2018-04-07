@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform.new("java")
   s.authors     = ["Ian Dickinson", "Bruno Ferreira", "Fábio Almeida"]
   s.email       = %w( ian@epimorphics.com chalkos@chalkos.net phabio_almeida@hotmail.com )
-  s.licenses    = 'Apache License, Version 2.0'
+  s.licenses    = 'Apache-2.0'
   s.homepage    = "https://github.com/lysferd/jena-jruby"
   s.summary     = %q{JRuby wrapper for Apache Jena}
   s.description = %q{A simple packaging of Apache Jena for JRuby}
@@ -26,6 +26,6 @@ Gem::Specification.new do |s|
 
   s.extra_rdoc_files = ["README.md"]
 
-  s.add_dependency( 'haml' )
-  s.add_dependency( 'builder' )
+  #s.add_dependency 'haml'
+  #s.add_dependency 'builder'
 end

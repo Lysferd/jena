@@ -1,11 +1,10 @@
-.loadpath
-.project
+.*
+*~
+*.gem
+*.xml
 javalib
 pkg
-.buildpath
 rdoc
 pkg
-*~
 temp
-.ruby-version
-*.gem
+downloads
