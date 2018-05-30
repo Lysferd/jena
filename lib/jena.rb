@@ -1,5 +1,6 @@
+
 require 'java'
-require 'jena_jruby/jars'
+require 'jena/jars'
 require 'builder'
 
 # Make a selection of key Jena classes available in a convenient module
@@ -97,11 +98,5 @@ module Jena
   end
 end
 
-%w[
-  version
-  utils
-  query_utils
-  node_utils
-  statement_utils
-  namespace
-].each {|f| require "jena_jruby/#{f}"}
+Dir.glob('lib/jena/*.rb').map { |path| File::basename path }.each { |file| require file }
+

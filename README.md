@@ -9,10 +9,9 @@ conveniently from JRuby.
 This gem provides the following benefits:
 
 * a single dependency which includes all of the `.jar` files for the latest release
-of Jena (currently 2.13.0) including TDB.
+of Jena (3.6.0), including TDB.
 
-* import of some of the key classes used by Jena-based programs into a `Jena::`
-module, to make code more compact
+* import key classes used by Jena-based programs into a `Jena::` module, to make code more compact
 
 * some additional utility and convenience methods
 
@@ -20,7 +19,7 @@ module, to make code more compact
 
 Once installed, just add to your code:
 
-    require 'jena_jruby'
+    require 'jena'
 
 or add a suitable dependency to your bundle spec.
 
@@ -28,19 +27,19 @@ or add a suitable dependency to your bundle spec.
 
 Create a model:
 
-    m = Jena::Core::ModelFactory.create_default_model
+    m = Jena::Model::ModelFactory.create_default_model
 
-(note that JRuby automagically converts Java CamelCase names to Ruby lower_case names)
+(JRuby automatically converts Java CamelCase names to Ruby lower_case names)
 
 Add a statement:
 
-    jruby-1.6.5 :003 > m = Jena::Core::ModelFactory.create_default_model
+    jruby-1.6.5 :003 > m = Jena::Model::ModelFactory.create_default_model
      => #<Java::ComHpHplJenaRdfModelImpl::ModelCom:0x135a4815>
-    jruby-1.6.5 :004 > s = Jena::Core::ResourceFactory.create_resource "http://example.org/s"
+    jruby-1.6.5 :004 > s = Jena::Model::ResourceFactory.create_resource "http://example.org/s"
      => #<Java::ComHpHplJenaRdfModelImpl::ResourceImpl:0x7b0f62cb>
-    jruby-1.6.5 :005 > o = Jena::Core::ResourceFactory.create_resource "http://example.org/o"
+    jruby-1.6.5 :005 > o = Jena::Model::ResourceFactory.create_resource "http://example.org/o"
      => #<Java::ComHpHplJenaRdfModelImpl::ResourceImpl:0x4879c985>
-    jruby-1.6.5 :006 > p = Jena::Core::ResourceFactory.createProperty "http://example.org/p"
+    jruby-1.6.5 :006 > p = Jena::Model::ResourceFactory.createProperty "http://example.org/p"
      => #<Java::ComHpHplJenaRdfModelImpl::PropertyImpl:0x3f7cd159>
     jruby-1.6.5 :007 > m.add s,p,o
      => #<Java::ComHpHplJenaRdfModelImpl::ModelCom:0x135a4815>
@@ -54,25 +53,11 @@ Since jena now includes TDB modules, those modules no longer need to be built lo
 To build the gem itself:
 
     $ rake build
-    jena-jruby 0.8.1 built to pkg/jena-jruby-0.8.1-java.gem.
 
 or
 
-    $ gem build jena-jruby.gemspec
-    Successfully built RubyGem
-    Name: jena-jruby
-    Version: 0.8.1
-    File: jena-jruby-0.8.1-java.gem
+    $ gem build jena.gemspec
 
 To run the tests:
 
     $ bundle exec rake test
-    Run options: --seed 45483
-
-    # Running:
-
-    ................
-
-    Finished in 0.351000s, 45.5840 runs/s, 142.4501 assertions/s.
-
-    16 runs, 50 assertions, 0 failures, 0 errors, 0 skips

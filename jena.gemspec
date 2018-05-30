@@ -1,8 +1,8 @@
 # -*- encoding: utf-8 -*-
 lib = File::expand_path('../lib/', __FILE__)
-$:.unshift(lib) unless $:.include?(lib)
+$:.unshift lib unless $:.include? lib
 
-require 'jena_jruby/version.rb'
+require 'jena/version.rb'
 
 # ensure we have the javalibs
 update = File::expand_path('../bin/update_jena', __FILE__)
@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Ian Dickinson', 'Bruno Ferreira', 'Fábio Almeida']
   s.email       = %w( ian@epimorphics.com chalkos@chalkos.net phabio_almeida@hotmail.com )
   s.licenses    = 'Apache-2.0'
-  s.homepage    = 'https://github.com/lysferd/jena-jruby'
+  s.homepage    = 'https://github.com/lysferd/jena'
   s.summary     = %q{JRuby wrapper for Apache Jena}
   s.description = %q{A simple packaging of Apache Jena for JRuby}
 
