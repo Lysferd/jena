@@ -5,7 +5,8 @@ require 'builder'
 
 # Make a selection of key Jena classes available in a convenient module
 module Jena
-  include_package org.apache.jena
+  java_import org.apache.jena
+  #include_package org.apache.jena
 
   # Import classes under org.apache.jena.*
   module Model
@@ -65,6 +66,11 @@ module Jena
 
   module Query
     include_package org.apache.jena.query
+  end
+
+  module SPARQL
+    include_package org.apache.jena.sparql
+    include_package org.apache.jena.sparql.core
   end
 
   module Ontology
